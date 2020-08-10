@@ -1,0 +1,24 @@
+FULL STACK WEBSITE
+
+BACKEND 
+1. Backend will only consist of JSON Api's 
+   - Best sellers Api -Array of json object repersenting best sold products
+2. view All-Array of json objects repersenting all the products.
+3. view single item -json object for that particular item.
+4.Customer reviews Api- json objects reperesenting customer reviews (seperate Model for Customers)
+5.Google Auth
+6. Facebook Auth
+7. Cart Api-items that are present in customer's cart
+
+
+
+
+FRONTEND
+1.Header component(Navbar+header photo+header text)
+2. we can make seperate components for navbar(pic+text)
+3.Product Component
+4. Customer Reviews Component
+5 Meet the founder component
+6 footer component
+7 login component (let's say we need to login with google button .so the props would be google icon .rest would be handled by backend.
+8 sign up with email component
