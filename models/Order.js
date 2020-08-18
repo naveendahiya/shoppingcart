@@ -13,15 +13,56 @@ const ordersSchema = new Schema(
 			type: String,
 			required: true,
 		},
-		phone: {
+		address: {
 			type: String,
 			required: true,
 		},
-		name: {
+		city: {
+			type: String,
+			required: true,
+		},
+		region: {
 			type: String,
 		},
-		ccnumber: {
+		postalcode: {
 			type: String,
+			required: true,
+		},
+		country: {
+			type: String,
+			required: true,
+		},
+
+		// card details
+		cardDetails: {
+			cardname: {
+				type: String,
+				required: true,
+			},
+			ccnumber: {
+				type: String,
+				required: true,
+			},
+			expdate: {
+				type: Date,
+				required: true,
+			},
+			cvv: {
+				type: String,
+				required: true,
+			},
+		},
+
+		// asked for cancellation
+		cancel: {
+			type: Boolean,
+			default: false,
+		},
+
+		// delievery of order
+		delievered: {
+			type: Boolean,
+			required: true,
 		},
 	},
 	{
