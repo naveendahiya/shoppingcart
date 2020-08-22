@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
 // basic details of seller
-const sellerSchema = new mongoose.Schema({
+
+const Schema = mongoose.Schema;
+const sellerSchema = new Schema({
 	name: {
 		type: String,
 		required: true,
@@ -14,15 +16,17 @@ const sellerSchema = new mongoose.Schema({
 		type: Number,
 		required: true,
 	},
+	password: {
+		type: String,
+	},
 	shopName: {
 		type: String,
 		required: true,
 	},
 
 	// the products a seller is selling
-	productsSell: [{ type: Schema.Types.ObjectId, ref: 'Product', required: true }],
+	productsSell: [{ type: mongoose.Types.ObjectId, ref: 'Product' }],
 });
-
 
 // add new product to sellers selling list
 sellerSchema.methods.addNewProductToSell = (product) => {
@@ -35,7 +39,6 @@ sellerSchema.methods.addNewProductToSell = (product) => {
 	//     findProductIndex = result.map(p=>{})
 	// });
 };
-
 
 // Update existing product in sellers selling list
 sellerSchema.methods.updateExistingProdQuan = (product) => {
@@ -52,7 +55,6 @@ sellerSchema.methods.updateExistingProdQuan = (product) => {
 	this.productsSell = newArr;
 	return this.save();
 };
-
 
 // remove a product from sellers list he do not want to sell
 sellerSchema.methods.removeExistingProduct = (product) => {
