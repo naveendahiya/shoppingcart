@@ -91,7 +91,7 @@ exports.createProduct = async (req, res, next) => {
 		description,
 		imageUrl,
 		quantity,
-		// soldBy: req.userData.userId || req.body.id,
+		// soldBy: req.userData.userId ,
 		soldBy: req.body.id,
 	});
 
