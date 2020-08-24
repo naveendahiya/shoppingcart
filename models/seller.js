@@ -29,8 +29,10 @@ const sellerSchema = new Schema({
 });
 
 // add new product to sellers selling list
-sellerSchema.methods.addNewProductToSell = (product) => {
-	console.log(this.productsSell);
+sellerSchema.methods.addNewProductToSell = function (product) {
+	// console.log(this);
+	// console.log(this.productsSell);
+	// console.log('here');
 	const newArr = [...this.productsSell];
 	newArr.push(product);
 	this.productsSell = newArr;
@@ -41,7 +43,7 @@ sellerSchema.methods.addNewProductToSell = (product) => {
 };
 
 // Update existing product in sellers selling list
-sellerSchema.methods.updateExistingProdQuan = (product) => {
+sellerSchema.methods.updateExistingProdQuan = function (product) {
 	let findProductIndex;
 	this.populate('productsSell', (err, result) => {
 		findProductIndex = result.findIndex((p) => {
@@ -57,7 +59,7 @@ sellerSchema.methods.updateExistingProdQuan = (product) => {
 };
 
 // remove a product from sellers list he do not want to sell
-sellerSchema.methods.removeExistingProduct = (product) => {
+sellerSchema.methods.removeExistingProduct = function (product) {
 	let newArr = [...this.productsSell];
 	newArr.filter((p) => {
 		return p._id.toString() !== product._id.toString();

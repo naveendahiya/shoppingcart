@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Product = require('../models/product');
+const Seller = require('../models/seller');
 
 exports.getAllProducts = (req, res, next) => {
 	Product.find().then((products) => {
@@ -90,13 +91,16 @@ exports.createProduct = async (req, res, next) => {
 		description,
 		imageUrl,
 		quantity,
-		soldBy: req.userData.userId,
+		// soldBy: req.userData.userId || req.body.id,
+		soldBy: req.body.id,
 	});
 
 	let user;
 	try {
-		user = await Seller.findById(req.userData.userId);
+		// user = await Seller.findById(req.userData.userId);
+		user = await Seller.findById(req.body.id);
 	} catch (error) {
+		console.log(error);
 		return res.status(404).json({ message: 'Cannot find any seller for the given credentials' });
 	}
 
@@ -113,6 +117,7 @@ exports.createProduct = async (req, res, next) => {
 		await user.save({ session: sess });
 		await sess.commitTransaction();
 	} catch (error) {
+		console.log(error);
 		return res.status(500).json({ message: 'Failed to add product for selling' });
 	}
 

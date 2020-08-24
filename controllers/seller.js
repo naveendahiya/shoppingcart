@@ -27,3 +27,14 @@ exports.createSeller = async (req, res) => {
 
 	return res.status(200).json({ message: 'Created your seller account successfully', seller: createdSeller });
 };
+
+exports.getSellersList = async (req, res) => {
+	let sellersList;
+	try {
+		sellersList = await Seller.find({});
+	} catch (error) {
+		return res.status(500).json({ message: 'Error in finding sellers list' });
+	}
+
+	return res.status(200).json({ sellersList });
+};
