@@ -32,6 +32,7 @@ exports.getSellersList = async (req, res) => {
 	let sellersList;
 	try {
 		sellersList = await Seller.find({});
+		// .populate('productsSell');
 	} catch (error) {
 		return res.status(500).json({ message: 'Error in finding sellers list' });
 	}

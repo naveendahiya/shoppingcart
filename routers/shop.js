@@ -16,4 +16,10 @@ router.post('/cart-delete-item/:productId', shopController.postCartDeleteProduct
 
 // create a product in shop by a specific seller
 router.post('/product/create', shopController.createProduct);
+
+// update a product quantity
+router.post('/product/update', shopController.updateProductQuantity);
+
+// remove a product
+router.post('/product/delete', shopController.removeProduct);
 module.exports = router;

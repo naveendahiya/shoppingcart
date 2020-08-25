@@ -47,7 +47,7 @@ sellerSchema.methods.updateExistingProdQuan = function (product) {
 	let findProductIndex;
 	this.populate('productsSell', (err, result) => {
 		findProductIndex = result.findIndex((p) => {
-			return p.title === product.title;
+			return p._id.toString() === product.id.toString();
 		});
 	});
 	let newArr = [...this.productsSell];
