@@ -52,11 +52,11 @@ http://localhost:8000/shop/product/update route to update the prouct
 
 # Delete a product
 http://localhost:8000/shop/product/delete
-`{
+` {
     "id":"5f44b5a5c5724a3be48e5c13",
     "userId":"5f411b8c0e65b05778bdcf0a",
     
-}`
+} `
 
 
 
