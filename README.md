@@ -22,7 +22,12 @@ body would contain all the fields specified in product model
 /shop/cart-delete-item/:productId
 
 
+# Create a seller
+use the route /seller/create to create a seller
 
+__Details required:__
+name,email,password,shopName and number
+the fields should send the data in same way like *name:Your Name*
 
 
 
