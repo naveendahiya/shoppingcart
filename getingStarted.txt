@@ -1,0 +1,2 @@
+navigate to folder shopping cart in your terminal 
+type command node app.js-
