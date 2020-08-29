@@ -75,7 +75,7 @@ mongoose
 			}
 		});
 
-		app.listen(8000);
+		app.listen(process.env.PORT || 8000);
 		console.log('connected to mongodb');
 	})
 	.catch((err) => {
