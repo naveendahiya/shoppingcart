@@ -7,7 +7,7 @@ const ordersSchema = new Schema(
 		purchaser: {
 			type: Schema.Types.ObjectId,
 			ref: 'User',
-			required: true,
+			// required: true,
 		},
 		email: {
 			type: String,
@@ -53,6 +53,15 @@ const ordersSchema = new Schema(
 			},
 		},
 
+		items: [
+			{
+				id: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
+				quantity: {
+					type: Number,
+				},
+			},
+		],
+
 		// asked for cancellation
 		cancel: {
 			type: Boolean,
@@ -62,7 +71,7 @@ const ordersSchema = new Schema(
 		// delievery of order
 		delievered: {
 			type: Boolean,
-			required: true,
+			// required: true,
 		},
 	},
 	{

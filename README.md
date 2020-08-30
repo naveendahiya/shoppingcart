@@ -70,3 +70,35 @@ lastname:"",
 email:'any email',
 password:'password'
 }
+
+# get all orders
+http://localhost:8000/orders/
+
+
+# create an order 
+http://localhost:8000/orders/create
+
+
+Data passed like
+{
+    "email": "test@email.com",
+    "address": "demo",
+    "city": "city",
+    "region": "region",
+    "postalcode": "code",
+    "country": "country",
+    "cardname": "my name",
+    "ccnumber": "1000",
+    "expdate": "Sun Aug 30 2020 14:02:54 GMT+0530 (India Standard Time)",
+    "cvv": "344",
+    "items": [
+        {
+            "id": "5f439a0fd0a4f554c8bee441",
+            "quantity": "5"
+        },
+        {
+            "id": "5f439a925b6e4759e87e0dd1",
+            "quantity": "2"
+        }
+    ]
+}

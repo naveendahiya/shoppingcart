@@ -8,6 +8,7 @@ const adminRouters = require('./routers/admin');
 const shopRouters = require('./routers/shop');
 const sellerRoutes = require('./routers/seller');
 const userRoutes = require('./routers/user');
+const orderRoutes = require('./routers/orders');
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
@@ -55,6 +56,7 @@ app.use('/shop', shopRouters);
 app.use('/admin', adminRouters);
 app.use('/seller', sellerRoutes);
 app.use('/user', userRoutes);
+app.use('/orders', orderRoutes);
 
 mongoose
 	.connect('mongodb+srv://user1:pTLecUakR9PyV8ZF@cluster0.opobk.mongodb.net/shop?retryWrites=true&w=majority', {
